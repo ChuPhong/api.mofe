@@ -19,7 +19,7 @@ class CreateSongsTable extends Migration
             $table->string('other_name', 100)->nullable();
             $table->string('thumbnail')->unique();
             $table->string('url')->unique();
-            $table->unsignedSmallInteger('year')->default(0);
+            $table->unsignedSmallInteger('year');
             $table->unsignedBigInteger('views')->default(0);
             $table->timestamps();
         });

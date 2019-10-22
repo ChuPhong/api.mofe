@@ -13,43 +13,53 @@ class ArtistsTableSeeder extends Seeder
     public function run()
     {
         Artist::create([
-            'name' => 'Chi Pu'
+            'name' => 'Chi Pu',
+            'avatar' => 'avatars/artists/chipu.jpg'
         ]);
 
         Artist::create([
-            'name' => 'Đạt G'
+            'name' => 'Đạt G',
+            'avatar' => 'avatars/artists/datg.jpg'
         ]);
 
         Artist::create([
-            'name' => 'Tóc Tiên'
+            'name' => 'Tóc Tiên',
+            'avatar' => 'avatars/artists/toctien.jpg'
         ]);
 
         Artist::create([
-            'name' => 'Da LAB'
+            'name' => 'Da LAB',
+            'avatar' => 'avatars/artists/dalab.jpg'
         ]);
 
         Artist::create([
-            'name' => 'Touliver'
+            'name' => 'Touliver',
+            'avatar' => 'avatars/artists/touliver.jpg'
         ]);
 
         Artist::create([
-            'name' => 'Hiền Hồ'
+            'name' => 'Hiền Hồ',
+            'avatar' => 'avatars/artists/hienho.jpg'
         ]);
 
         Artist::create([
-            'name' => 'Sơn Tùng MTP'
+            'name' => 'Sơn Tùng MTP',
+            'avatar' => 'avatars/artists/sontungmtp.jpg'
         ]);
 
         Artist::create([
-            'name' => 'Trịnh Đình Quang'
+            'name' => 'Trịnh Đình Quang',
+            'avatar' => 'avatars/artists/trinhdinhquang.jpg'
         ]);
 
         Artist::create([
-            'name' => 'Đức Phúc'
+            'name' => 'Đức Phúc',
+            'avatar' => 'avatars/artists/ducphuc.jpg'
         ]);
 
         Artist::create([
             'name' => 'Quân A.P',
+            'avatar' => 'avatars/artists/quanap.jpg'
         ]);
     }
 }

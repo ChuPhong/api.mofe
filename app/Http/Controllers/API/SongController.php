@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Song\SongStoreRequest;
 use App\Http\Resources\SongResource;
 use App\Song;
 use Illuminate\Http\Request;
@@ -14,9 +15,21 @@ class SongController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth:api')->except('index', 'show');
+        $this->middleware('auth:api')->except('index', 'show', 'info');
 //        $this->middleware('permission:management.songs.all')->only('index');
         $this->middleware('permission:management.songs.destroy')->only('destroy');
+    }
+
+    public function info() {
+        $allSongs = Song::count();
+        $allViews = Song::sum('views');
+
+        return response()->json([
+            'data' => [
+                'all_songs' => $allSongs,
+                'all_views' => $allViews
+            ]
+        ]);
     }
 
     /**
@@ -71,10 +84,10 @@ class SongController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param SongStoreRequest $request
      * @return SongResource
      */
-    public function store(Request $request)
+    public function store(SongStoreRequest $request)
     {
         $song = Song::create($request->all())->setArtist($request->get('artists'));
         $song->refresh();
@@ -98,11 +111,23 @@ class SongController extends Controller
      *
      * @param \Illuminate\Http\Request $request
      * @param \App\Song $song
-     * @return \Illuminate\Http\Response
+     * @return SongResource
      */
     public function update(Request $request, Song $song)
     {
-        //
+        $currentView = $song->views;
+        $updateViews = $request->get('views');
+
+        if (($currentView + 1) !== $updateViews)
+        {
+            $updateViews = $currentView + 1;
+        }
+
+        $data = array_merge($request->all(), ['views' => $updateViews]);
+
+        $song->update($data);
+
+        return new SongResource($song);
     }
 
     /**

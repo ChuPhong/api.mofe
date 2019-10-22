@@ -3,6 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
 
 /**
  * App\Artist
@@ -25,6 +27,10 @@ use Illuminate\Database\Eloquent\Model;
 class Artist extends Model
 {
     protected $fillable = [
-        'name'
+        'name', 'avatar'
     ];
+
+    public function songs() {
+        return $this->belongsToMany('App\Song');
+    }
 }

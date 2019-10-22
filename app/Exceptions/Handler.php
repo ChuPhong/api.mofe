@@ -57,6 +57,8 @@ class Handler extends ExceptionHandler
                     return response()->json(['message' => 'Không tìm thấy dữ liệu cần thiết.'])->setStatusCode(Response::HTTP_NOT_FOUND);
                 case $exception instanceof UnauthorizedException:
                     return response()->json(['message' => 'Bạn không có quyền thực hiện chức năng này.'])->setStatusCode($exception->getStatusCode());
+                case $exception instanceof \Illuminate\Validation\ValidationException:
+                    return response()->json(['message' => 'Dữ liệu bạn nhập vào đã bị thiếu.'])->setStatusCode(422);
             }
         }
 

@@ -12,17 +12,18 @@ Route::prefix('v1')->group(function () {
 
     Route::middleware('auth:api')->group(function () {
         Route::apiResource('users', 'API\UserController');
-        Route::post('users/avatar', 'API\UploadController@avatar')->name('users.avatar.store');
+        Route::post('users/avatar', 'API\UploadController@userAvatar')->name('users.avatar.store');
 
 
         Route::post('songs/thumbnail', 'API\UploadController@thumbnail')->name('songs.thumbnail.store');
         Route::post('songs/upload', 'API\UploadController@song')->name('songs.upload.store');
-
-        Route::apiResource('artists', 'API\ArtistController')->only('index');
     });
 
+    Route::get('songs/info', 'API\SongController@info');
     Route::apiResource('songs', 'API\SongController');
 
+    Route::apiResource('artists', 'API\ArtistController');
+    Route::post('artists/avatar', 'API\UploadController@artistAvatar')->name('artists.avatar.store');
 });
 
 \Event::listen('Illuminate\Database\Events\QueryExecuted', function ($query) {

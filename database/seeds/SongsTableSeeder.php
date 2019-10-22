@@ -17,50 +17,58 @@ class SongsTableSeeder extends Seeder
             'name' => 'Anh ơi ở lại',
             'other_name' => 'Cám Tấm',
             'thumbnail' => 'songs/thumbnail/AnhOiOLai.jpg',
-            'url' => 'songs/anhoiolai.mp3'
+            'url' => 'songs/anhoiolai.mp3',
+            'year' => 2019
         ])->setArtist('Chi Pu', 'Đạt G');
 
         Song::create([
             'name' => 'Nước mắt em lau bằng tình yêu mới',
             'thumbnail' => 'songs/thumbnail/NuocMatEmLauBangTinhYeuMoi.jpg',
-            'url' => 'songs/nuocmatemlaubangtinhyeumoi.mp3'
+            'url' => 'songs/nuocmatemlaubangtinhyeumoi.mp3',
+            'year' => 2019
         ])->setArtist('Da LAB', 'Tóc Tiên');
 
         Song::create([
             'name' => 'Có ai thương em như anh',
             'other_name' => '#CATENA',
             'thumbnail' => 'songs/thumbnail/CoAiThuongEmNhuAnh.jpg',
-            'url' => 'songs/catena.mp3'
+            'url' => 'songs/catena.mp3',
+            'year' => 2019
         ])->setArtist('Tóc Tiên', 'Touliver');
 
         Song::create([
             'name' => 'Rồi người thương cũng hóa người dưng',
             'thumbnail' => 'songs/thumbnail/RoiNguoiThuongCungHoaNguoiDung.jpg',
-            'url' => 'songs/roinguoithuongcunghoanguoidung.mp3'
+            'url' => 'songs/roinguoithuongcunghoanguoidung.mp3',
+            'year' => 2019
         ])->setArtist('Hiền Hồ');
 
         Song::create([
             'name' => 'Lạc trôi',
             'thumbnail' => 'songs/thumbnail/LacTroi.jpg',
-            'url' => 'songs/lactroi.mp3'
+            'url' => 'songs/lactroi.mp3',
+            'year' => 2019
         ])->setArtist('Sơn Tùng MTP');
 
         Song::create([
             'name' => 'Buồn lắm em ơi',
             'thumbnail' => 'songs/thumbnail/buonlamemoi.jpg',
-            'url' => 'songs/buonlamemoi.mp3'
+            'url' => 'songs/buonlamemoi.mp3',
+            'year' => 2019
         ])->setArtist('Trịnh Đình Quang');
 
         Song::create([
             'name' => 'Hết thương cạn nhớ',
             'thumbnail' => 'songs/thumbnail/hetthuongcannho.jpg',
-            'url' => 'songs/hetthuongcannho.mp3'
+            'url' => 'songs/hetthuongcannho.mp3',
+            'year' => 2019
         ])->setArtist('Đức Phúc');
 
         Song::create([
             'name' => 'Còn gì đau hơn chữ đã từng',
             'thumbnail' => 'songs/thumbnail/ConGiDauHonChuDaTung.jpg',
-            'url' => 'songs/ConGiDauHonChuDaTung.mp3'
+            'url' => 'songs/ConGiDauHonChuDaTung.mp3',
+            'year' => 2019
         ])->setArtist('Quân A.P');
     }
 }

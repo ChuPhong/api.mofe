@@ -19,10 +19,10 @@ class UsersTableSeeder extends Seeder
             'password' => 'password',
         ])->syncRoles('admin');
 
-        User::create([
-            'name' => 'Trần Duy Anh',
-            'email' => 'tranduyanh@gmail.com',
-            'password' => 'password',
-        ])->syncRoles('moderator');
+//        User::create([
+//            'name' => 'Trần Duy Anh',
+//            'email' => 'tranduyanh@gmail.com',
+//            'password' => 'password',
+//        ])->syncRoles('moderator');
     }
 }

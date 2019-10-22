@@ -9,11 +9,10 @@ class ArtistResource extends JsonResource
     public function toArray($request)
     {
         /** @var \App\Artist|$this $this */
-        return [
+        return array_merge(parent::toArray($request), [
+            'id' => $this->id,
             'name' => $this->name,
-            $this->mergeWhen($this->avatar, [
-                'avatar' => $this->avatar
-            ])
-        ];
+            'avatar' => asset(\Storage::url($this->avatar))
+        ]);
     }
 }

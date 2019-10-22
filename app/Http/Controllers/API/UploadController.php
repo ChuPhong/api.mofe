@@ -24,10 +24,18 @@ class UploadController extends Controller
         ]);
     }
 
-    public function avatar(AvatarRequest $request): UploadResource
+    private function avatar(AvatarRequest $request, string $path): UploadResource
     {
         $file = $request->file('avatar');
-        return $this->save('avatars', $file);
+        return $this->save('avatars/' . $path, $file);
+    }
+
+    public function userAvatar(AvatarRequest $request) {
+        return $this->avatar($request, 'users');
+    }
+
+    public function artistAvatar(AvatarRequest $request) {
+        return $this->avatar($request, 'artists');
     }
 
     public function thumbnail(ThumbnailRequest $request): UploadResource
